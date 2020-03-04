@@ -13,7 +13,7 @@ for ($i = 50; $i <= 1000; $i++) {
 }*/
 
 
-echo '<h3 style = color:forestgreen>10.2 Рассчитать значение y, определив и использовав необходимую функцию:</h3><br/>';
+/*echo '<h3 style = color:forestgreen>10.2 Рассчитать значение y, определив и использовав необходимую функцию:</h3><br/>';
 
 function valueY($x){
     if($x == 'a') {
@@ -28,4 +28,43 @@ function valueY($x){
 }
 
 $x = valueY('c');
-echo $x;
+echo $x;*/
+
+echo '<h3 style = color:forestgreen>10.7.    Даны основания и высоты двух равнобедренных трапеций. Найти сумму их 
+периметров.  (Определить  функцию  для  расчета  периметра  равнобедренной 
+трапеции по ее основаниям и высоте.)</h3><br/>';
+
+function perimeter($upper_base,$bottom_base,$height)
+{
+    $cathet = ($bottom_base - $upper_base) / 2;
+    $hypotenuse = sqrt(($height ** 2) + ($cathet ** 2));
+    return $p = round(($hypotenuse * 2 + $upper_base + $bottom_base), 3);
+}
+
+$upper_base = rand(1, 5);
+echo'верхнее основание первой трапеции = '.$upper_base.'<br/>';
+$bottom_base = rand(7, 13);
+echo'нижнее основание первой трапеции = '.$bottom_base.'<br/>';
+$height = rand(4, 10);
+echo'высота трапеции = '.$height.'<br/>';
+
+
+echo'Периметр первой трапеции = ';
+$p1 = perimeter($upper_base,$bottom_base,$height);
+echo $p1.'<br/><br/>';
+
+
+$upper_base = rand(1, 5);
+echo'верхнее основание второй трапеции = '.$upper_base.'<br/>';
+$bottom_base = rand(7, 13);
+echo'нижнее основание второй трапеции = '.$bottom_base.'<br/>';
+$height = rand(4, 10);
+echo'высота трапеции = '.$height.'<br/>';
+
+
+echo'Периметр второй трапеции = ';
+$p2 = perimeter($upper_base,$bottom_base,$height);
+echo $p2.'<br/><br/>';
+
+echo'Сумма периметров трапеций = ';
+echo $sum = $p1 + $p2;
