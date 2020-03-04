@@ -13,24 +13,41 @@ for ($i = 50; $i <= 1000; $i++) {
 }*/
 
 
-/*echo '<h3 style = color:forestgreen>10.2 Рассчитать значение y, определив и использовав необходимую функцию:</h3><br/>';
+echo '<h3 style = color:forestgreen>10.2 Рассчитать значение y, определив и использовав необходимую функцию:</h3><br/>';
 
-function valueY($x){
-    if($x == 'a') {
-      return $y = ((1 + sin(1)) / 3) + ((5 + sin(5)) / 3) + ((3 + sin(3)) / 3);
-    }elseif($x == 'b') {
-        return $y = ((2 + sin(2)) / sin(5) + 5) + ((6 + sin(6)) / sin(3) + 3) + ((1 + sin(1)) / sin(4) + 4);
-    }elseif($x == 'c') {
-        return $y = ((1 + sin(4)) / 4 + sin(1)) + ((7 + sin(5)) / sin(7) + 5) + ((3 + sin(2)) / sin(4) + 2);
-    }elseif($x == 'd'){
-    return $y = ((2 + sin(3)) / 3 + sin(2)) + ((1 + sin(5)) / sin(1) + 5) + ((4 + sin(7)) / sin(3) + 7);
-    }
+function first($a,$b){
+    return $y = (($a + sin($a)) / $b);
 }
 
-$x = valueY('c');
-echo $x;*/
+function second($a,$b){
+    return $y = (($a + sin($a)) / sin($b) + $b);
+}
 
-echo '<h3 style = color:forestgreen>10.7.    Даны основания и высоты двух равнобедренных трапеций. Найти сумму их 
+function third($a,$b){
+    return $y = (($a + sin($b)) / $b + sin($a));
+}
+
+function fourth($a,$b){
+    return $y = (($a + sin($b)) / sin(($a-1)) + $b);
+}
+$one = rand(2,10);
+$two = rand(1,10);
+$a = round(first($one,$two) + first($one,$two) + first($one,$two), 2);
+echo ' a) y = '.$a.'<br/>';
+
+$b = round(second($one,$two) + second($one,$two) + second($one,$two), 2);
+echo ' b) y = '.$b.'<br/>';
+
+$c = round(third($one,$two) + third($one,$two) + third($one,$two), 2);
+echo ' c) y = '.$c.'<br/>';
+
+$d = round(third($one,$two) + third($one,$two) + fourth($one,$two), 2);
+echo ' d) y = '.$d.'<br/>';
+
+
+
+
+/*echo '<h3 style = color:forestgreen>10.7.    Даны основания и высоты двух равнобедренных трапеций. Найти сумму их
 периметров.  (Определить  функцию  для  расчета  периметра  равнобедренной 
 трапеции по ее основаниям и высоте.)</h3><br/>';
 
@@ -67,4 +84,4 @@ $p2 = perimeter($upper_base,$bottom_base,$height);
 echo $p2.'<br/><br/>';
 
 echo'Сумма периметров трапеций = ';
-echo $sum = $p1 + $p2;
+echo $sum = $p1 + $p2;*/
