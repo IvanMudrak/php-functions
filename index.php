@@ -1,5 +1,5 @@
 <?php
-echo '<h1 style="color:green">5.21.  Напечатать  таблицу  стоимости  50,  100,  150, ...,  1000 г  сыра  (стоимость  1 кг
+/*echo '<h1 style="color:green">5.21.  Напечатать  таблицу  стоимости  50,  100,  150, ...,  1000 г  сыра  (стоимость  1 кг
 сыра вводится с клавиатуры).<br/></h1>';
 
 $cost = rand(200,300);
@@ -7,40 +7,50 @@ echo'стоимость сыра за кг = '.$cost.'<br/>';
 $cost /= 1000;
 for ($i = 50; $i <= 1000; $i+=50) {
     echo $i.'гр. сыра стоит '.($cost*$i).'<br/>';
+}*/
+
+
+echo '<h3 style = color:forestgreen>10.2 Рассчитать значение y, определив и использовав необходимую функцию:</h3><br/>';
+function fraction($a,$b){
+    return $a/$b;
 }
-
-
-/*echo '<h3 style = color:forestgreen>10.2 Рассчитать значение y, определив и использовав необходимую функцию:</h3><br/>';
-
 function first($a,$b){
-    return $y = (($a + sin($a)) / $b);
+    return fraction($a + sin($a), $b);
 }
-
 function second($a,$b){
-    return $y = (($a + sin($a)) / sin($b) + $b);
+    return fraction($a + sin($a), sin($b) + $b);
 }
-
 function third($a,$b){
-    return $y = (($a + sin($b)) / $b + sin($a));
+    return fraction($a + sin($b), $b + sin($a));
+}
+function fourth($a,$b){
+    return fraction($a + sin($b), sin($a-1) + $b);
 }
 
-function fourth($a,$b){
-    return $y = (($a + sin($b)) / sin(($a-1)) + $b);
-}
-$one = rand(2,10);
-$two = rand(1,10);
-$a = round(first($one,$two) + first($one,$two) + first($one,$two), 2);
+$a = first(1,3)
+    + first(5,3)
+    + first(3,3);
+$a = round($a,2);
 echo ' a) y = '.$a.'<br/>';
 
-$b = round(second($one,$two) + second($one,$two) + second($one,$two), 2);
+$b = second(2,5)
+    + second(6,3)
+    + second(1,4);
+$b = round($b,2);
 echo ' b) y = '.$b.'<br/>';
 
-$c = round(third($one,$two) + third($one,$two) + third($one,$two), 2);
+$c = third(1,4)
+    + third(7,5)
+    + third(3,2);
+$c = round($c,2);
 echo ' c) y = '.$c.'<br/>';
 
-$d = round(third($one,$two) + third($one,$two) + fourth($one,$two), 2);
+$d = third(2,3)
+    + third(1,5)
+    + fourth(4,7);
+$d = round($d,2);
 echo ' d) y = '.$d.'<br/>';
-*/
+
 
 
 
