@@ -52,10 +52,8 @@ $d = round($d,2);
 echo ' d) y = '.$d.'<br/>';*///10.2 функция у
 
 
-
-
-echo '<h3 style = color:forestgreen>10.7.    Даны основания и высоты двух равнобедренных трапеций. Найти сумму их
-периметров.  (Определить  функцию  для  расчета  периметра  равнобедренной 
+/*echo '<h3 style = color:forestgreen>10.7.    Даны основания и высоты двух равнобедренных трапеций. Найти сумму их
+периметров.  (Определить  функцию  для  расчета  периметра  равнобедренной
 трапеции по ее основаниям и высоте.)</h3><br/>';
 
 function perimeter($upper_base,$bottom_base,$height)
@@ -88,4 +86,42 @@ $p2 = perimeter($upper_base,$bottom_base,$height);
 echo $p2.'<br/><br/>';
 
 echo'Сумма периметров трапеций = ';
-echo $sum = $p1 + $p2;//10.7 Сумма периметров трапеций
+echo $sum = $p1 + $p2;*///10.7 Сумма периметров трапеций
+
+echo'10.18.  Даны два натуральных числа. Выяснить, в каком из них сумма цифр больше. 
+(Определить функцию для расчета суммы цифр натурального числа.)<br/>';
+
+$number1 = rand(1,10000);
+echo'первое число = '.$number1.'<br/>';
+$number1 = strval($number1);
+
+$number2 = rand(1,10000);
+echo'второе число = '.$number2.'<br/>';
+$number2 = strval($number2);
+
+
+function sum($x){
+    $sum = 0;
+    for($i = 0; $i <= strlen($x); $i++){
+        $sum += $x[$i];
+    }
+    return $sum;
+}
+function larger($x1,$x2){
+    if($x1>$x2){
+        return $x1;
+    }
+    if($x2>$x1){
+        return $x2;
+    }else{
+        return $x1.' = '.$x2;
+    }
+}
+
+$sum1 = sum($number1);
+echo 'Сумма первого числа = '.$sum1.'<br/>';
+
+$sum2 = sum($number2);
+echo 'Сумма второго  числа = '.$sum2.'<br/><br/>';
+
+echo 'ответ: '.larger($sum1,$sum2);
